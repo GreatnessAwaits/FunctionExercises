@@ -1,14 +1,3 @@
-//
-// DO THIS ON PAPER FIRST, THEN PASTE THE CODE INTO PROCESSING AND
-// CHECK YOUR ANSWERS.
-//
-
-// Exercise P-1: Below we take a classic 'bouncing ball' and combine it with 
-// a drawCar() function. Fill in the blanks so that you now have a bouncing
-// car with parameter passing! Note that the global variables are named 
-// globalX and globalY to avoid confusion with the local variables x and y in 
-// drawCar().
-
 int globalX = 0;
 int globalY = 100;
 int speed = 1;
@@ -21,12 +10,12 @@ void draw() {
   background(255);
   move();
   bounce();
-  drawCar(_______, _______, 24, color(100));
+  drawCar(globalX,globalY , 24, color(100));
 }
 
 void move() {
   // Change the x location by speed
-  ________ = _______ + speed;
+  globalX = globalX + speed;
 }
 
 void bounce() {
@@ -35,7 +24,7 @@ void bounce() {
   }
 }
 
-void drawCar(int ___, int ___, int thesize, color c) {
+void drawCar(int x, int y, int thesize, color c) {
   int offset = thesize / 4;
   rectMode(CENTER);
   stroke(0);
